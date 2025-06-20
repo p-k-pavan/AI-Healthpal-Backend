@@ -7,6 +7,10 @@ const cors = require("cors");
 const app = express();
 dotenv.config();
 
+mongoose.connect(process.env.MONGODB)
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.error("MongoDB error:", err));
+
 app.use(cors({ origin: process.env.FRONTEND, credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
