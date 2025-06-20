@@ -104,4 +104,12 @@ const login = async (req, res, next) => {
     }
 };
 
-module.exports = { register, login };
+const logOut = (req, res, next) => {
+  try {
+    res.clearCookie("web_token").status(200).json({ success: true,message: "User log out successfully" })
+  } catch (error) {
+    next(error)
+  }
+};
+
+module.exports = { register, login,logOut };
