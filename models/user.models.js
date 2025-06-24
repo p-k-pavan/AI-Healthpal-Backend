@@ -10,17 +10,13 @@ const userSchema = new Schema({
     required: true,
     type: Date
   },
-  age: {
-    required: true,
-    type: Number
-  },
   gender: {
     required: true,
     type: String
   },
   role: {
     type: String,
-    enum: ['admin', 'doctor', 'patient'],
+    enum: ['Admin', 'Doctor', 'Patient'],
     default: 'patient'
   },
   email: {
